@@ -1,6 +1,9 @@
 body{
     font-size: 17px;
-    font-family: arial;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* position: left; */
+    /* float: left; */
+    /* text-align: center; */
     background: rgb(232, 233, 233);
     line-height: 1.5em;
   }
@@ -8,21 +11,16 @@ header{
     background: rgb(4, 191, 197);
     color: rgb(8, 8, 8);
     padding: 20px;
-    text-align: center;
+    /* text-align: left; */
+    font-size: 90px;
     border-bottom: 4px rgb(5, 194, 241) solid;
     margin-bottom: 10px
   }
-#container{
-    width: 90%;
-    margin: auto;
-    padding: 10px;
+  #hyperlink {
+    color:rgb(32, 171, 206);
+    padding-block-start: 60px
   }
-#inputrow{
-    text-align: left;
-}
-
-
-
+ 
 
 
 

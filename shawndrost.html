@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="jquery.js"></script>
+  <script src='jqueryTimeAgo.js'></script>
+  <script src="data_generator.js"></script>
+  <link href="stylesheet.css" rel="stylesheet" type="text/css">
+  <title>Twittler</title>
+
+</head>
+
+<body>
+
+
+  <script>
+    $(document).ready(function () {
+      var $body = $('body');
+      $body.html('');
+
+      $($body).append('<header> <img id="theImg" src="birdPic.png" style="vertical-align: middle"  alt="blue cartoon bird"/> <span style="vertical-align: middle">twittler</span></header>')
+      // $($body).append('<p><button>get new tweets</button></p>').on('click', function(){
+      //    alert('hi')
+      //  })
+
+      var index = streams.home.length - 1;
+
+    //   while (index >= 0) {
+        var tweet = streams.home[index];
+        var $tweet = $('<div> <h1></h1></div>');
+        $tweet;
+
+    //     $($body).append('<a href="www.google.com" id="hyperlink" target="_self">' + '@' + tweet.user + '</a>' + '<a/a>' + ': ' +  streams.users.shawndrost);
+    //     $tweet.appendTo($body)        
+    //     index -= 1;
+    //   }
+      // $($body).prepend("<div id='postInner'><div id='timeStamp'></div></div>")
+  
+      for (var el of streams.users.shawndrost) {
+    return $($body).append('@shawndrost: ' + el.message)
+      
+     }
+      updateTimeStamp();
+      setInterval(updateTimeStamp, 6000);
+      function updateTimeStamp() {
+        var timeAgo = jQuery.timeago(tweet.created_at);
+        $('#timeStamp').text(timeAgo);
+      }
+      // var el = document.getElementById('hyperlink');
+      //   el.onclick = showFoo;
+
+     
+      
+      
+
+    });
+  </script>
+</body>
+
+</html>
