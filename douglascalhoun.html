@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="jquery.js"></script>
+  <script src='jqueryTimeAgo.js'></script>
+  <script src="data_generator.js"></script>
+  <link href="stylesheet.css" rel="stylesheet" type="text/css">
+  <title>Twittler</title>
+
+</head>
+
+<body>
+  <script>
+    $(document).ready(function () {
+      var $body = $('body');
+      $body.html('');
+     
+      // adds image of bird to page and header
+      $($body).append('<header> <img id="theImg" src="birdPic.png" style="vertical-align: middle"  alt="blue cartoon bird"/> <span style="vertical-align: middle">twittler</span></header>')
+     
+      // adds get new tweet button. Creates new tweet on press
+      $($body).append('<button>get new tweets</button>').on('click', 'button', function () {;
+        $('#hyperlink').after('<div class="timeStamp" ></div>');
+        $('#hyperlink').after(': ' + randomMessage());
+        $('#hyperlink').before('<p><a href="shawndrost.html" id="hyperlink" target="_self"></p>' + '@' + randomElement(window.users));
+      });
+      
+
+        
+        
+
+      //  adds tweets user, time created, and message to the page.
+      
+      var users = streams.users.douglascalhoun
+      var sharksTweets = users.map(el => $($body).append('<div></div>' +'@' + 'douglascalhoun '+ el.message));
+      
+
+      
+
+
+      // this function updates the timestamp
+      updateTimeStamp();
+      setInterval(updateTimeStamp, 6000);
+      function updateTimeStamp() {
+        var timeago = jQuery.timeago(new Date());
+        $('.timeStamp').text(timeago);
+      }
+
+   
+
+    });
+  </script>
+</body>
+
+</html>

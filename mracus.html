@@ -20,47 +20,34 @@
       $($body).append('<header> <img id="theImg" src="birdPic.png" style="vertical-align: middle"  alt="blue cartoon bird"/> <span style="vertical-align: middle">twittler</span></header>')
      
       // adds get new tweet button. Creates new tweet on press
-      $($body).append('<div><button>get new tweets</button><div>').on('click', 'button', function () {;
+      $($body).append('<button>get new tweets</button>').on('click', 'button', function () {;
         $('#hyperlink').after('<div class="timeStamp" ></div>');
         $('#hyperlink').after(': ' + randomMessage());
         $('#hyperlink').before('<p><a href="shawndrost.html" id="hyperlink" target="_self"></p>' + '@' + randomElement(window.users));
       });
       
-      console.log(generateRandomTweet())
+
         
         
       var index = streams.home.length - 1;
-     
       //  adds tweets user, time created, and message to the page.
-      while (index >= 0) {
-        var tweet = streams.home[index];
-        var $tweet = $('<div class="timeStamp"></div>');
+      
+      var users = streams.users.sharksforcheap
+      var sharksTweets = users.map(el => $($body).append('<div></div>' +'@' + 'mracus '+ el.message));
+      
 
-        if (tweet.user === 'shawndrost') {
-          $($body).append('<p><div><a href="shawndrost.html" id="hyperlink" target="_self"></div></p>' + '@' + tweet.user);
-          $($body).append(': ' + tweet.message)
-        } else if (tweet.user === 'sharksforcheap') {
-          $($body).append('<p><div><a href="sharksforcheap.html" id="hyperlink" target="_self"></div></p>' + '@' + tweet.user);
-          $($body).append(': ' + tweet.message)
-        } else if (tweet.user === 'mracus') {
-          $($body).append('<p><div><a href="mracus.html" id="hyperlink" target="_self"></div></p>' + '@' + tweet.user);
-          $($body).append(': ' + tweet.message)
-        } else if (tweet.user === 'douglascalhoun') {
-          $($body).append('<p><div><a href="douglascalhoun.html" id="hyperlink" target="_self"></div></p>' + '@' + tweet.user);
-          $($body).append(': ' + tweet.message)
-        } 
+      
 
-        $tweet.appendTo($body);
-        index -= 1;
-      }
 
       // this function updates the timestamp
       updateTimeStamp();
       setInterval(updateTimeStamp, 6000);
       function updateTimeStamp() {
-        var timeago = jQuery.timeago(tweet.created_at);
+        var timeago = jQuery.timeago(new Date());
         $('.timeStamp').text(timeago);
       }
+
+   
 
     });
   </script>

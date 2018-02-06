@@ -29,28 +29,17 @@
         var tweet = streams.home[index];
         var $tweet = $('<div> <h1></h1></div>');
         $tweet;
-
-    //     $($body).append('<a href="www.google.com" id="hyperlink" target="_self">' + '@' + tweet.user + '</a>' + '<a/a>' + ': ' +  streams.users.shawndrost);
-    //     $tweet.appendTo($body)        
-    //     index -= 1;
-    //   }
-      // $($body).prepend("<div id='postInner'><div id='timeStamp'></div></div>")
   
-      for (var el of streams.users.shawndrost) {
-    return $($body).append('@shawndrost: ' + el.message)
+      var users = streams.users.douglascalhoun
+      var sharksTweets = users.map(el => $($body).append('<div></div>' +'@' + 'shawndrost '+ el.message));
       
-     }
+
       updateTimeStamp();
       setInterval(updateTimeStamp, 6000);
       function updateTimeStamp() {
         var timeAgo = jQuery.timeago(tweet.created_at);
         $('#timeStamp').text(timeAgo);
       }
-      // var el = document.getElementById('hyperlink');
-      //   el.onclick = showFoo;
-
-     
-      
       
 
     });
