@@ -15,44 +15,49 @@
     $(document).ready(function () {
       var $body = $('body');
       $body.html('');
-     
+     var tweet = streams.home[index];
       // adds image of bird to page and header
-      $($body).append('<header> <img id="theImg" src="birdPic.png" style="vertical-align: middle"  alt="blue cartoon bird"/> <span style="vertical-align: middle">twittler</span></header>')
+      $($body).append('<header align="center"> <img id="theImg" src="birdPic.png" style="vertical-align: middle"  alt="blue cartoon bird"/> <span style="vertical-align: middle">twittler</span></header>')
      
-      // adds get new tweet button. Creates new tweet on press
       $($body).append('<div><button>get new tweets</button><div>').on('click', 'button', function () {;
-        $('#hyperlink').after('<div class="timeStamp" ></div>');
-        $('#hyperlink').after(': ' + randomMessage());
-        $('#hyperlink').before('<p><a href="shawndrost.html" id="hyperlink" target="_self"></p>' + '@' + randomElement(window.users));
+        $('#hyperlink').after('<div class="timeStamp"></div>');
+        $('#hyperlink').after( randomMessage())
+        
+        // $('#hyperlink').after(': ' + randomMessage());
+        $('#hyperlink').after('<div><a href="wwww.google.com" id="hyperlink2" </a></div>' + '@' + randomElement(window.users)+': ')
+        
       });
+     
       
-      console.log(generateRandomTweet())
+
         
         
       var index = streams.home.length - 1;
      
-      //  adds tweets user, time created, and message to the page.
+
       while (index >= 0) {
         var tweet = streams.home[index];
-        var $tweet = $('<div class="timeStamp"></div>');
+        var $tweet = $('<div id="text" class="timeStamp"></div>');
 
         if (tweet.user === 'shawndrost') {
-          $($body).append('<p><div><a href="shawndrost.html" id="hyperlink" target="_self"></div></p>' + '@' + tweet.user);
+          $($body).append('<div id="text"><a href="shawndrost.html" id="hyperlink" target="_self"></center></div>' + '@' + tweet.user);
           $($body).append(': ' + tweet.message)
         } else if (tweet.user === 'sharksforcheap') {
-          $($body).append('<p><div><a href="sharksforcheap.html" id="hyperlink" target="_self"></div></p>' + '@' + tweet.user);
+          $($body).append('<div id="text"><a href="sharksforcheap.html" id="hyperlink" target="_self"></div>' + '@' + tweet.user);
           $($body).append(': ' + tweet.message)
         } else if (tweet.user === 'mracus') {
-          $($body).append('<p><div><a href="mracus.html" id="hyperlink" target="_self"></div></p>' + '@' + tweet.user);
+          $($body).append('<div id="text"><a href="mracus.html" id="hyperlink" target="_self"></div>' + '@' + tweet.user);
           $($body).append(': ' + tweet.message)
         } else if (tweet.user === 'douglascalhoun') {
-          $($body).append('<p><div><a href="douglascalhoun.html" id="hyperlink" target="_self"></div></p>' + '@' + tweet.user);
+          $($body).append('<div id="text"><a href="douglascalhoun.html" id="hyperlink" target="_self"></div>' + '@' + tweet.user);
           $($body).append(': ' + tweet.message)
         } 
 
         $tweet.appendTo($body);
         index -= 1;
       }
+
+      
 
       // this function updates the timestamp
       updateTimeStamp();

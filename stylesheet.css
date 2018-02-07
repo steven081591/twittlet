@@ -6,6 +6,8 @@ body{
     /* text-align: center; */
     background: rgb(232, 233, 233);
     line-height: 1.5em;
+    /* align-content: center; */
+    
     
    
   }
@@ -13,23 +15,37 @@ header{
     background: rgb(4, 191, 197);
     color: rgb(8, 8, 8);
     padding: 20px;
-    text-align: center;
+    /* text-align: center; */
     font-size: 90px;
     border-bottom: 4px rgb(5, 194, 241) solid;
     margin-bottom: 10px
+    
 
     
   }
   #hyperlink {
     color:rgb(32, 171, 206);
-    text-align: center;
+    /* text-align: left; */
     padding-left: 450px;
+   
   }
-div{
-  
+#text{
   padding-left: 450px
+   
+  }
+  #hyperlink2 {
+    color:rgb(32, 171, 206);
+  }
+  div{
+   align-content: center; 
+   
+
+
+  }
+
+button{
+
+  text-align: center
 }
-
-
 
 
