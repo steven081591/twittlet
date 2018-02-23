@@ -7,6 +7,7 @@ body{
     background: rgb(232, 233, 233);
     line-height: 1.5em;
     /* align-content: center; */
+  
     
     
    
@@ -27,24 +28,27 @@ header{
     color:rgb(32, 171, 206);
     /* text-align: left; */
     padding-left: 450px;
+    
+    
+  
    
   }
 #text{
-  padding-left: 450px
+  padding-left: 450px;
+
    
   }
   #hyperlink2 {
     color:rgb(32, 171, 206);
   }
-  div{
-   align-content: center; 
-   
+  /* div{
+   /* align-content: center;  */
+   padding-left: 450px
 
 
-  }
+  } */
 
 button{
-
   text-align: center
 }
 

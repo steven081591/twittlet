@@ -16,28 +16,38 @@
       var $body = $('body');
       $body.html('');
      var tweet = streams.home[index];
-      // adds image of bird to page and header
       $($body).append('<header align="center"> <img id="theImg" src="birdPic.png" style="vertical-align: middle"  alt="blue cartoon bird"/> <span style="vertical-align: middle">twittler</span></header>')
      
-      $($body).append('<div><button>get new tweets</button><div>').on('click', 'button', function () {;
+      $($body).append('<div id="text"><button>get new tweets</button><div>').on('click', 'button', function () {;
+       let tweeter = randomElement(window.users)
+       var $tweet1 = $('<div id="text" class="timeStamp"></div>');
+        if (tweeter === 'shawndrost') {
         $('#hyperlink').after('<div class="timeStamp"></div>');
-        $('#hyperlink').after( randomMessage())
-        
-        // $('#hyperlink').after(': ' + randomMessage());
-        $('#hyperlink').after('<div><a href="wwww.google.com" id="hyperlink2" </a></div>' + '@' + randomElement(window.users)+': ')
-        
-      });
+        $('#hyperlink').after(': ' + randomMessage() );
+        $('#hyperlink').after('<p><a href="shawndrost.html" id="hyperlink2" </a></p>' + '@' + tweeter)
+          } else if (tweeter === 'mracus') {
+        $('#hyperlink').after('<div class="timeStamp"></div>');
+        $('#hyperlink').after(': ' + randomMessage() );
+        $('#hyperlink').after('<p><a href="mracus.html" id="hyperlink2" </a></p>' + '@' + tweeter)
+          } else if (tweeter === 'sharksforcheap') {
+        $('#hyperlink').after('<div class="timeStamp"></div>');
+        $('#hyperlink').after(': ' + randomMessage() );
+        $('#hyperlink').after('<p><a href="sharksforcheap.html" id="hyperlink2" </a></p>' + '@' + tweeter)
+          } else if (tweeter === 'douglascalhoun') {
+        $('#hyperlink').after('<div class="timeStamp"></div>');
+        $('#hyperlink').after(': ' + randomMessage() );
+        $('#hyperlink').after('<p><a href="douglascalhoun.html" id="hyperlink2" </a></p>' + '@' + tweeter)
+          }
+           $tweet.appendTo($body)
+        });
      
-      
 
-        
-        
       var index = streams.home.length - 1;
      
 
       while (index >= 0) {
         var tweet = streams.home[index];
-        var $tweet = $('<div id="text" class="timeStamp"></div>');
+        var $tweet = $('<div id="text" class="timeStamp"></div>' );
 
         if (tweet.user === 'shawndrost') {
           $($body).append('<div id="text"><a href="shawndrost.html" id="hyperlink" target="_self"></center></div>' + '@' + tweet.user);
@@ -57,15 +67,17 @@
         index -= 1;
       }
 
-      
+
 
       // this function updates the timestamp
       updateTimeStamp();
       setInterval(updateTimeStamp, 6000);
+      
       function updateTimeStamp() {
         var timeago = jQuery.timeago(tweet.created_at);
         $('.timeStamp').text(timeago);
       }
+      
 
     });
   </script>
